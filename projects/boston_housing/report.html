@@ -13142,7 +13142,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -13214,17 +13214,17 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
 <span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Median price of the data</span>
 <span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
@@ -13735,7 +13735,7 @@ Think about the pros and cons of adding more training points based on if the tra
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>In k-fold cross validation training technique we split the data to k buckets. The model is trained k times where in each iteration one of the k bucket, and each time a different one, is used as cross-validation set and rest of the buckets are used for training purpose -- after k iterations all the k buckets would have been used as CV set. This method helps in making sure some of the important data points are not missed while training and the final testing score would have also give better view of model in terms of biases and variances.</p>
+<p>In k-fold cross validation training technique we split the data to k buckets. The model is trained k times where in each iteration one of the k bucket, and each time a different one, is used as cross-validation set and rest of the buckets are used for training purpose -- after k iterations all the k buckets would have been used as CV set. The mean value of results of all the k iterations is calculated and used as overall result of the model. This method helps in making sure some of the important data points are not missed while training and the final testing score would have also give better view of model in terms of biases and variances.</p>
 <p>In case of grid search technique done without k-fold cross validation the hyper-parameters chosen post grid search learning would work very well for the test set chosen but it might not work well for new predictions which can cause mismatch between offline accuracy and online accuracy of the model -- this can happen because while choosing hyper-parameters the CV set is always the same and if there are some data points in CV set which could have changed the learnt parameters of the model then this would make model less accurate. So essentially without k-fold CV technique the hyper-parameters chosen might work very well for testing set chosen but might fail to do well for new data points.</p>
 
 </div>
@@ -13870,7 +13870,7 @@ Think about the pros and cons of adding more training points based on if the tra
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong> Hint: </strong> The answer comes from the output of the code snipped above.</p>
 <p><strong>Answer: </strong>
-4</p>
+4 is the max_depth for optimal model. In question 6 the max_depth guess I made was 4 looking at the validation score curve which is same as what we have found here. So, my answer for Q6 is right.</p>
 
 </div>
 </div>
